@@ -43,13 +43,13 @@ class BetterThermostat extends LitElement {
 
     const entityId = this.config.entity;
     // const state = this.hass.states[entityId];
-    this.logger(entityId);
+    this.logger("entityId");
     // console.log(state);
     // this.modes = state.attributes.preset_modes;
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
-    this.logger("- Should Update Called");
+    this.logger("- shouldUpdate() Called");
     this.logger(hasConfigOrEntityChanged(this, changedProps, false));
     return hasConfigOrEntityChanged(this, changedProps, false);
   }
