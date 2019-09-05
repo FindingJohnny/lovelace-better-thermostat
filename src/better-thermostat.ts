@@ -25,6 +25,8 @@ class BetterThermostat extends LitElement {
 
   @property() private config?: BetterThermostatConfig;
 
+  @property() private modes?: [];
+
   public setConfig(config: BetterThermostatConfig): void {
     // TODO Check for required fields and that they are of the proper format
     if (!config || config.show_error) {
@@ -32,6 +34,17 @@ class BetterThermostat extends LitElement {
     }
 
     this.config = config;
+    this.loadClimateModes();
+  }
+
+  private loadClimateModes() {
+    if (!this.config || !this.hass) {
+      return;
+    }
+
+    const entityId = this.config.entity;
+    const state = this.hass.states[entityId];
+    // this.modes = state.attributes.preset_modes;
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
@@ -58,7 +71,11 @@ class BetterThermostat extends LitElement {
         @ha-click="${this._handleTap}"
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
-      ></ha-card>
+      >
+        <ul>
+          
+        </ul>
+      </ha-card>
     `;
   }
 

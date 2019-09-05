@@ -6,7 +6,11 @@ export interface BetterThermostatConfig {
   name?: string;
   show_warning?: boolean;
   show_error?: boolean;
-  entity?: string;
+  entity: string;
   tap_aciton?: ActionConfig;
   hold_action?: ActionConfig;
+}
+
+export interface Climate {
+
 }
