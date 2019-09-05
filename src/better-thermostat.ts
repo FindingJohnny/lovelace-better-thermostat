@@ -43,9 +43,9 @@ class BetterThermostat extends LitElement {
     }
 
     const entityId = this.config.entity;
-    const state = this.hass.states[entityId];
+    // const state = this.hass.states[entityId];
     console.log(entityId);
-    console.log(state);
+    // console.log(state);
     // this.modes = state.attributes.preset_modes;
   }
 
