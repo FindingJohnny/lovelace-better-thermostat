@@ -34,7 +34,6 @@ class BetterThermostat extends LitElement {
     }
 
     this.config = config;
-    this.loadClimateModes();
   }
 
   private loadClimateModes() {
@@ -44,12 +43,13 @@ class BetterThermostat extends LitElement {
 
     const entityId = this.config.entity;
     // const state = this.hass.states[entityId];
-    console.log(entityId);
+    this.logger(entityId);
     // console.log(state);
     // this.modes = state.attributes.preset_modes;
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
+    this.logger("- Should Update Called");
     return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
@@ -74,9 +74,7 @@ class BetterThermostat extends LitElement {
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
       >
-        <ul>
-          
-        </ul>
+        <ul></ul>
       </ha-card>
     `;
   }
@@ -98,5 +96,14 @@ class BetterThermostat extends LitElement {
         padding: 8px;
       }
     `;
+  }
+
+  logger(message, script = null) {
+    if (!("debug" in (this as any).args(script))) return;
+
+    let message2 = message;
+
+    if (typeof message2 !== "string") message2 = JSON.stringify(message2);
+    console.log(`%cDEBUG:%c ${message2}`, "color: blue; font-weight: bold", "");
   }
 }
