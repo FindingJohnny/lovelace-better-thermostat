@@ -38,32 +38,33 @@ class BetterThermostat extends LitElement {
   }
 
   private loadClimateModes() {
-    this.logger("--loadClimateModes---");
-    this.logger(this.config);
-    this.logger(this.hass);
     if (!this.config || !this.hass) {
       return;
     }
 
     const entityId = this.config.entity;
-    // const state = this.hass.states[entityId];
-    this.logger("entityId");
-    // console.log(state);
-    // this.modes = state.attributes.preset_modes;
+    this.logger(entityId);
+    const state = this.hass.states[entityId];
+    this.logger(state);
+    this.modes = state.attributes.preset_modes;
+    this.logger(this.modes);
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
     this.logger("--- shouldUpdate ---");
     this.logger(hasConfigOrEntityChanged(this, changedProps, false));
     this.logger(changedProps);
-    this.logger("--- Hass Below ---");
-    this.logger(this.hass);
+
+    if (hasConfigOrEntityChanged(this, changedProps, false)) {
+      this.loadClimateModes();
+    }
+
     return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
 
   protected render(): TemplateResult | void {
-    if (!this.config || !this.hass) {
+    if (!this.config || !this.hass || !this.modes) {
       return html``;
     }
 
@@ -83,7 +84,9 @@ class BetterThermostat extends LitElement {
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
       >
-        <ul></ul>
+        <ul>
+          ${this.modes.map(mode => html`<li>${mode}</li>`)}
+        </ul>
       </ha-card>
     `;
   }
