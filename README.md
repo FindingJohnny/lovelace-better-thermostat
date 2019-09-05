@@ -9,5 +9,5 @@ Templated from [boilerplate-card](https://github.com/custom-cards/boilerplate-ca
 ```
 resources:
   - url: /community_plugin/lovelace-better-thermostat/better-thermostat.js
-    type: Could not determine the type of this plugin, check the repository.
+    type: js
 ```
