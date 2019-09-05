@@ -50,6 +50,7 @@ class BetterThermostat extends LitElement {
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
     this.logger("- Should Update Called");
+    this.logger(hasConfigOrEntityChanged(this, changedProps, false));
     return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
