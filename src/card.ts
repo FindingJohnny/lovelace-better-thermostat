@@ -15,17 +15,17 @@ import {
   hasConfigOrEntityChanged
 } from "custom-card-helpers";
 
-import { BoilerplateConfig } from "./types";
+import { BetterThermostatConfig } from "./types";
 
 // TODO Name your custom element
-@customElement("boilerplate-card")
-class BoilerplateCard extends LitElement {
+@customElement("better-thermostat")
+class BetterThermostat extends LitElement {
   // TODO Add any properities that should cause your element to re-render here
   @property() public hass?: HomeAssistant;
 
-  @property() private _config?: BoilerplateConfig;
+  @property() private _config?: BetterThermostatConfig;
 
-  public setConfig(config: BoilerplateConfig): void {
+  public setConfig(config: BetterThermostatConfig): void {
     // TODO Check for required fields and that they are of the proper format
     if (!config || config.show_error) {
       throw new Error("Invalid configuration");
@@ -35,7 +35,7 @@ class BoilerplateCard extends LitElement {
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
-    return hasConfigOrEntityChanged(this, changedProps);
+    return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
   protected render(): TemplateResult | void {
@@ -63,11 +63,11 @@ class BoilerplateCard extends LitElement {
   }
 
   private _handleTap(): void {
-    handleClick(this, this.hass!, this._config!, false);
+    handleClick(this, this.hass!, this._config!, false, false);
   }
 
   private _handleHold(): void {
-    handleClick(this, this.hass!, this._config!, true);
+    handleClick(this, this.hass!, this._config!, true, false);
   }
 
   static get styles(): CSSResult {

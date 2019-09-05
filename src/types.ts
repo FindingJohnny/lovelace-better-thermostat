@@ -1,7 +1,7 @@
 import { ActionConfig } from "custom-card-helpers";
 
 // TODO Add your configuration elements here for type-checking
-export interface BoilerplateConfig {
+export interface BetterThermostatConfig {
   type: string;
   name?: string;
   show_warning?: boolean;
