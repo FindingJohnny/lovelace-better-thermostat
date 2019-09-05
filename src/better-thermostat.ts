@@ -23,7 +23,7 @@ class BetterThermostat extends LitElement {
   // TODO Add any properities that should cause your element to re-render here
   @property() public hass?: HomeAssistant;
 
-  @property() private _config?: BetterThermostatConfig;
+  @property() private config?: BetterThermostatConfig;
 
   public setConfig(config: BetterThermostatConfig): void {
     // TODO Check for required fields and that they are of the proper format
@@ -31,7 +31,7 @@ class BetterThermostat extends LitElement {
       throw new Error("Invalid configuration");
     }
 
-    this._config = config;
+    this.config = config;
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
@@ -39,12 +39,12 @@ class BetterThermostat extends LitElement {
   }
 
   protected render(): TemplateResult | void {
-    if (!this._config || !this.hass) {
+    if (!this.config || !this.hass) {
       return html``;
     }
 
     // TODO Check for stateObj or other necessary things and render a warning if missing
-    if (this._config.show_warning) {
+    if (this.config.show_warning) {
       return html`
         <ha-card>
           <div class="warning">Show Warning</div>
@@ -54,7 +54,7 @@ class BetterThermostat extends LitElement {
 
     return html`
       <ha-card
-        .header=${this._config.name ? this._config.name : "Boilerplate"}
+        .header=${this.config.name ? this.config.name : "Boilerplate"}
         @ha-click="${this._handleTap}"
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
@@ -63,11 +63,11 @@ class BetterThermostat extends LitElement {
   }
 
   private _handleTap(): void {
-    handleClick(this, this.hass!, this._config!, false, false);
+    handleClick(this, this.hass!, this.config!, false, false);
   }
 
   private _handleHold(): void {
-    handleClick(this, this.hass!, this._config!, true, false);
+    handleClick(this, this.hass!, this.config!, true, false);
   }
 
   static get styles(): CSSResult {
