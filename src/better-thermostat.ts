@@ -34,9 +34,11 @@ class BetterThermostat extends LitElement {
     }
 
     this.config = config;
+    this.loadClimateModes();
   }
 
   private loadClimateModes() {
+    this.logger("--loadClimateModes---");
     if (!this.config || !this.hass) {
       return;
     }
