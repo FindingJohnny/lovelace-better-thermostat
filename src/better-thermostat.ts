@@ -27,6 +27,17 @@ class BetterThermostat extends LitElement {
 
   @property() private modes?: [];
 
+  @property() private currentTemp?: string;
+
+  @property() private currentMode?: string;
+
+  @property() private maxTemp?: string;
+
+  @property() private minTemp?: string;
+
+  @property() private friendlyName?: string;
+
+
   public setConfig(config: BetterThermostatConfig): void {
     // TODO Check for required fields and that they are of the proper format
     if (!config || config.show_error) {
@@ -43,18 +54,19 @@ class BetterThermostat extends LitElement {
     }
 
     const entityId = this.config.entity;
-    this.logger(entityId);
+    // this.logger(entityId);
     const state = this.hass.states[entityId];
     this.logger(state);
     this.modes = state.attributes.preset_modes;
-    this.logger(this.modes);
+    this.currentMode = state.attributes.preset_mode;
+    this.currentTemp = state.attributes.current_temperature;
+    this.maxTemp = state.attributes.max_temp;
+    this.minTemp = state.attributes.min_temp;
+    this.friendlyName = state.attributes.friendly_name;
+    // this.logger(this.modes);
   }
 
   protected shouldUpdate(changedProps: PropertyValues): boolean {
-    this.logger("--- shouldUpdate ---");
-    this.logger(hasConfigOrEntityChanged(this, changedProps, false));
-    this.logger(changedProps);
-
     if (hasConfigOrEntityChanged(this, changedProps, false)) {
       this.loadClimateModes();
     }
@@ -84,9 +96,13 @@ class BetterThermostat extends LitElement {
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
       >
-        <ul>
-          ${this.modes.map(mode => html`<li>${mode}</li>`)}
-        </ul>
+      <h1>Current ${this.friendlyName} Climate</h1>
+      <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
+      <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+      <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
+      <h3><b>Min Temp: </b> ${this.minTemp}</h3>
+      <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+      <h3><b>Available Modes: </b>${this.modes.join()}</h3>
       </ha-card>
     `;
   }
