@@ -18,4 +18,4 @@ function t(t,e,n,s){var i,r=arguments.length,o=r<3?e:null===s?s=Object.getOwnPro
         background-color: #fce588;
         padding: 8px;
       }
-    `}logger(t,e=null){if(!("debug"in this.args(e)))return;let n=t;"string"!=typeof n&&(n=JSON.stringify(n)),console.log(`%cDEBUG:%c ${n}`,"color: blue; font-weight: bold","")}};t([it()],Vt.prototype,"hass",void 0),t([it()],Vt.prototype,"config",void 0),t([it()],Vt.prototype,"modes",void 0),Vt=t([(t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e))(t,e):((t,e)=>{const{kind:n,elements:s}=e;return{kind:n,elements:s,finisher(e){window.customElements.define(t,e)}}})(t,e))("better-thermostat")],Vt);
+    `}logger(t){let e=t;"string"!=typeof e&&(e=JSON.stringify(e)),console.log(`%cDEBUG:%c ${e}`,"color: blue; font-weight: bold","")}};t([it()],Vt.prototype,"hass",void 0),t([it()],Vt.prototype,"config",void 0),t([it()],Vt.prototype,"modes",void 0),Vt=t([(t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e))(t,e):((t,e)=>{const{kind:n,elements:s}=e;return{kind:n,elements:s,finisher(e){window.customElements.define(t,e)}}})(t,e))("better-thermostat")],Vt);

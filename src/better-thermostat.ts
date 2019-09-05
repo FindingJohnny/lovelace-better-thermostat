@@ -98,8 +98,8 @@ class BetterThermostat extends LitElement {
     `;
   }
 
-  logger(message, script = null) {
-    if (!("debug" in (this as any).args(script))) return;
+  logger(message) {
+    // if (!("debug" in (this as any).args(script))) return;
 
     let message2 = message;
 
