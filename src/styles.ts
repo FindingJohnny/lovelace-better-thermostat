@@ -21,13 +21,13 @@ const style = css`
     width: 50%;
     align-items: center;
     justify-content: center;
-    font-size: 24;
+    font-size: 12rem;
   }
   .other-temp {
     width: 25%;
     align-items: center;
     justify-content: center;
-    font-size: 12;
+    font-size: 6rem;
   }
   .loader {
     width: 100%;
