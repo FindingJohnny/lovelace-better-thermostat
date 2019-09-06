@@ -131,7 +131,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
         </div>
-        <div clsas="container center-items">
+        <div class="container center-items">
           <div class="current-mode">${this.currentMode}</div>
         </div>
         <div class="container space-evenly">

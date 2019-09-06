@@ -104,7 +104,7 @@ class BetterThermostat extends LitElement {
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
         </div>
-        <div clsas="container center-items">
+        <div class="container center-items">
           <div class="current-mode">${this.currentMode}</div>
         </div>
         <div class="container space-evenly">
