@@ -14,8 +14,14 @@ const style = css`
   .center-items {
     align-items: center;
   }
-  .item50 {
-    flex-basis: 50%;
+  .space-evenly {
+    justify-content: space-evenly;
+  }
+  .current-mode {
+    font-size: 4rem;
+  }
+  .climate-mode {
+    flex-basis: 33%;
   }
   .item25 {
     flex-basis: 25%;

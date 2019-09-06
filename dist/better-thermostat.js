@@ -12,8 +12,14 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
   .center-items {
     align-items: center;
   }
-  .item50 {
-    flex-basis: 50%;
+  .space-evenly {
+    justify-content: space-evenly;
+  }
+  .current-mode {
+    font-size: 4rem;
+  }
+  .climate-mode {
+    flex-basis: 33%;
   }
   .item25 {
     flex-basis: 25%;
@@ -125,9 +131,13 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
         <div clsas="container">
           <div class="current-mode">${this.currentMode}</div>
         </div>
-        <div class="container">
+        <div class="container space-evenly">
           ${this.modes.map(t=>O`
-                <mwc-button class="light" raised label="${t}"></mwc-button>
+                <mwc-button
+                  class="light climate-mode"
+                  raised
+                  label="${t}"
+                ></mwc-button>
               `)}
         </div>
       </ha-card>

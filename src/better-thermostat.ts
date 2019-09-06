@@ -107,11 +107,15 @@ class BetterThermostat extends LitElement {
         <div clsas="container">
           <div class="current-mode">${this.currentMode}</div>
         </div>
-        <div class="container">
+        <div class="container space-evenly">
           ${this.modes.map(
             mode =>
               html`
-                <mwc-button class="light" raised label="${mode}"></mwc-button>
+                <mwc-button
+                  class="light climate-mode"
+                  raised
+                  label="${mode}"
+                ></mwc-button>
               `
           )}
         </div>
