@@ -61,8 +61,8 @@ class BetterThermostat extends LitElement {
     this.modes = state.attributes.preset_modes;
     this.currentMode = state.attributes.preset_mode;
     this.currentTemp = state.attributes.current_temperature;
-    this.maxTemp = state.attributes.max_temp;
-    this.minTemp = state.attributes.min_temp;
+    this.maxTemp = state.attributes.target_temp_high;
+    this.minTemp = state.attributes.target_temp_low;
     this.friendlyName = state.attributes.friendly_name;
     // this.logger(this.modes);
   }
@@ -99,7 +99,7 @@ class BetterThermostat extends LitElement {
         .longpress="${longPress()}"
         class="thermostat-card"
       >
-        <div class="container">
+        <div class="container center-items">
           <div class="item other-temp">${this.minTemp}</div>
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>

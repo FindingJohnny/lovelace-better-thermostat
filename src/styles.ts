@@ -11,6 +11,9 @@ const style = css`
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .center-items {
+    align-items: center;
+  }
   .item50 {
     flex-basis: 50%;
   }
