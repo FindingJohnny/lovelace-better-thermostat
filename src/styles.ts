@@ -3,7 +3,7 @@ import { css } from "lit-element";
 const style = css`
   .thermostat-card {
     display: flex;
-    padding: 0 16px 4px;
+    padding: 15px;
     flex-direction: column;
   }
   .loader {

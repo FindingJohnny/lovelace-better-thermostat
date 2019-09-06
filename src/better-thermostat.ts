@@ -95,6 +95,7 @@ class BetterThermostat extends LitElement {
         @ha-click="${this._handleTap}"
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
+        class="thermostat-card"
       >
         <h1>Current ${this.friendlyName} Climate</h1>
         <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
