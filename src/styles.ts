@@ -4,21 +4,29 @@ const style = css`
   .thermostat-card {
     display: flex;
     padding: 15px;
+    flex-direction: column;
+  }
+  .container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .item50 {
+    flex-basis: 50%;
+  }
+  .item25 {
+    flex-basis: 25%;
   }
   .current-temp {
     width: 50%;
     align-items: center;
     justify-content: center;
-    display: flex;
     font-size: 24;
   }
   .other-temp {
     width: 25%;
     align-items: center;
     justify-content: center;
-    display: flex;
     font-size: 12;
   }
   .loader {

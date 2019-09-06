@@ -99,9 +99,11 @@ class BetterThermostat extends LitElement {
         .longpress="${longPress()}"
         class="thermostat-card"
       >
-        <div class="other-temp">${this.minTemp}</div>
-        <div class="current-temp">${this.currentTemp}</div>
-        <div class="other-temp">${this.maxTemp}</div>
+        <div class="container">
+          <div class="item other-temp">${this.minTemp}</div>
+          <div class="item current-temp">${this.currentTemp}</div>
+          <div class="item other-temp">${this.maxTemp}</div>
+        </div>
         <h3><b>Current Mode: </b> ${this.currentMode}</h3>
         ${this.modes.map(
           mode =>
