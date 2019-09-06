@@ -9,14 +9,16 @@ function t(t,e,n,s){var i,r=arguments.length,o=r<3?e:null===s?s=Object.getOwnPro
         @ha-hold="${this._handleHold}"
         .longpress="${Vt()}"
       >
-        <h1>Current ${this.friendlyName} Climate</h1>
-        <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
-        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-        <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
-        <h3><b>Min Temp: </b> ${this.minTemp}</h3>
-        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-        <h3><b>Available Modes: </b>${this.modes.join(", ")}</h3>
-        ${this.modes.map(t=>O`<mwc-button class="light" raised label="${t}"></mwc-button>`)}
+        <div padding=2>
+          <h1>Current ${this.friendlyName} Climate</h1>
+          <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
+          <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+          <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
+          <h3><b>Min Temp: </b> ${this.minTemp}</h3>
+          <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+          <h3><b>Available Modes: </b>${this.modes.join(", ")}</h3>
+          ${this.modes.map(t=>O`<mwc-button class="light" raised label="${t}"></mwc-button>`)}
+        </div>
       </ha-card>
     `:O``}_handleTap(){Et(this,this.hass,this.config,!1,!1)}_handleHold(){Et(this,this.hass,this.config,!0,!1)}static get styles(){return ct`
       .warning {
