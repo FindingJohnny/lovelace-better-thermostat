@@ -20,6 +20,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
   }
   .climate-mode {
     flex-basis: 33%;
+    padding: 1rem;
   }
   .item25 {
     flex-basis: 25%;

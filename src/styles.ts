@@ -22,6 +22,7 @@ const style = css`
   }
   .climate-mode {
     flex-basis: 33%;
+    padding: 1rem;
   }
   .item25 {
     flex-basis: 25%;
