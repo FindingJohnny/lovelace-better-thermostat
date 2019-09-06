@@ -15,6 +15,8 @@ import {
   hasConfigOrEntityChanged
 } from "custom-card-helpers";
 
+import { Button } from "@material/mwc-button";
+
 import { BetterThermostatConfig } from "./types";
 
 // TODO Name your custom element
@@ -96,13 +98,14 @@ class BetterThermostat extends LitElement {
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
       >
-      <h1>Current ${this.friendlyName} Climate</h1>
-      <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
-      <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-      <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
-      <h3><b>Min Temp: </b> ${this.minTemp}</h3>
-      <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-      <h3><b>Available Modes: </b>${this.modes.join()}</h3>
+        <h1>Current ${this.friendlyName} Climate</h1>
+        <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
+        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+        <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
+        <h3><b>Min Temp: </b> ${this.minTemp}</h3>
+        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+        <h3><b>Available Modes: </b>${this.modes.join(', ')}</h3>
+        ${this.modes.map(mode => html`<mwc-button>${mode}</mwc-button>`)}
       </ha-card>
     `;
   }
