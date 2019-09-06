@@ -17,6 +17,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
   }
   .current-mode {
     font-size: 2rem;
+    padding: 0.25rem;
   }
   .climate-mode {
     flex-basis: 33%;
@@ -129,7 +130,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
         </div>
-        <div clsas="container">
+        <div clsas="container center-items">
           <div class="current-mode">${this.currentMode}</div>
         </div>
         <div class="container space-evenly">
