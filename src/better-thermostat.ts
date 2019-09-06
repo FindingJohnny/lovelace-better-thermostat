@@ -104,13 +104,17 @@ class BetterThermostat extends LitElement {
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
         </div>
-        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-        ${this.modes.map(
-          mode =>
-            html`
-              <mwc-button class="light" raised label="${mode}"></mwc-button>
-            `
-        )}
+        <div clsas="container">
+          <div class="current-mode">${this.currentMode}</div>
+        </div>
+        <div class="container">
+          ${this.modes.map(
+            mode =>
+              html`
+                <mwc-button class="light" raised label="${mode}"></mwc-button>
+              `
+          )}
+        </div>
       </ha-card>
     `;
   }
