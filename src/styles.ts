@@ -19,7 +19,8 @@ const style = css`
   }
   .current-mode {
     font-size: 2rem;
-    padding: 0.25rem;
+    padding: 1rem;
+    justify-content: center;
   }
   .climate-mode {
     flex-basis: 33%;

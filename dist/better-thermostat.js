@@ -17,7 +17,8 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
   }
   .current-mode {
     font-size: 2rem;
-    padding: 0.25rem;
+    padding: 1rem;
+    justify-content: center;
   }
   .climate-mode {
     flex-basis: 33%;
