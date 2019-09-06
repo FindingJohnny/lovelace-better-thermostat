@@ -6,6 +6,20 @@ const style = css`
     padding: 15px;
     flex-direction: column;
   }
+  .current-temp {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 24;
+  }
+  .other-temp {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 12;
+  }
   .loader {
     width: 100%;
     padding-top: 30px;

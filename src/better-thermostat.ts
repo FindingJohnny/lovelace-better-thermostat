@@ -91,19 +91,18 @@ class BetterThermostat extends LitElement {
 
     return html`
       <ha-card
-        .header=${this.config.name ? this.config.name : "Boilerplate"}
+        .header=${this.config.name
+          ? this.config.name
+          : "Current ${this.friendlyName} Climate"}
         @ha-click="${this._handleTap}"
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
         class="thermostat-card"
       >
-        <h1>Current ${this.friendlyName} Climate</h1>
-        <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
+        <div class="other-temp">${this.minTemp}</div>
+        <div class="current-temp">${this.currentTemp}</div>
+        <div class="other-temp">${this.maxTemp}</div>
         <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-        <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
-        <h3><b>Min Temp: </b> ${this.minTemp}</h3>
-        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-        <h3><b>Available Modes: </b>${this.modes.join(", ")}</h3>
         ${this.modes.map(
           mode =>
             html`
