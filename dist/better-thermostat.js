@@ -129,7 +129,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
         .longpress="${Dt()}"
         class="thermostat-card"
       >
-        <div class="container center-items center-self">
+        <div class="container center-items">
           <div class="item other-temp">${this.minTemp}</div>
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>

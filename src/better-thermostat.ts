@@ -99,7 +99,7 @@ class BetterThermostat extends LitElement {
         .longpress="${longPress()}"
         class="thermostat-card"
       >
-        <div class="container center-items center-self">
+        <div class="container center-items">
           <div class="item other-temp">${this.minTemp}</div>
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
