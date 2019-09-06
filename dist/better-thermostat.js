@@ -12,6 +12,9 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
   .center-items {
     align-items: center;
   }
+  .center-self {
+    align-self: center;
+  }
   .space-evenly {
     justify-content: space-evenly;
   }
@@ -126,15 +129,15 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
         .longpress="${Dt()}"
         class="thermostat-card"
       >
-        <div class="container center-items">
+        <div class="container center-items center-self">
           <div class="item other-temp">${this.minTemp}</div>
           <div class="item current-temp">${this.currentTemp}</div>
           <div class="item other-temp">${this.maxTemp}</div>
         </div>
-        <div class="container center-items">
+        <div class="container center-items center-self">
           <div class="current-mode">${this.currentMode}</div>
         </div>
-        <div class="container space-evenly">
+        <div class="container space-evenly center-self">
           ${this.modes.map(t=>O`
                 <mwc-button
                   class="light climate-mode"

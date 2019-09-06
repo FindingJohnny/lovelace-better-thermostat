@@ -14,6 +14,9 @@ const style = css`
   .center-items {
     align-items: center;
   }
+  .center-self {
+    align-self: center;
+  }
   .space-evenly {
     justify-content: space-evenly;
   }
