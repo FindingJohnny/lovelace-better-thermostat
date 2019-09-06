@@ -3,7 +3,7 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
     display: flex;
     padding: 15px;
     flex-direction: row;
-    flew-wrap: wrap;
+    flex-wrap: wrap;
   }
   .current-temp {
     width: 50%;

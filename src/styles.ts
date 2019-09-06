@@ -5,7 +5,7 @@ const style = css`
     display: flex;
     padding: 15px;
     flex-direction: row;
-    flew-wrap: wrap;
+    flex-wrap: wrap;
   }
   .current-temp {
     width: 50%;
