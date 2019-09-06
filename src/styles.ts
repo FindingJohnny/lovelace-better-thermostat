@@ -4,7 +4,7 @@ const style = css`
   .thermostat-card {
     display: flex;
     padding: 15px;
-    flex-direction: column;
+    flex-direction: row;
   }
   .current-temp {
     width: 50%;
@@ -14,7 +14,7 @@ const style = css`
     font-size: 24;
   }
   .other-temp {
-    width: 50%;
+    width: 25%;
     align-items: center;
     justify-content: center;
     display: flex;
