@@ -18,11 +18,11 @@ const style = css`
     justify-content: space-evenly;
   }
   .current-mode {
-    font-size: 4rem;
+    font-size: 1rem;
   }
   .climate-mode {
     flex-basis: 33%;
-    padding: 1rem;
+    padding: 0.25rem;
   }
   .item25 {
     flex-basis: 25%;

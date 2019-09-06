@@ -16,11 +16,11 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
     justify-content: space-evenly;
   }
   .current-mode {
-    font-size: 4rem;
+    font-size: 1rem;
   }
   .climate-mode {
     flex-basis: 33%;
-    padding: 1rem;
+    padding: 0.25rem;
   }
   .item25 {
     flex-basis: 25%;
