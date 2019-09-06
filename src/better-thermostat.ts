@@ -27,7 +27,7 @@ class BetterThermostat extends LitElement {
 
   @property() private config?: BetterThermostatConfig;
 
-  @property() private modes?: [];
+  @property() private modes?: [string];
 
   @property() private currentTemp?: string;
 
@@ -105,7 +105,7 @@ class BetterThermostat extends LitElement {
         <h3><b>Min Temp: </b> ${this.minTemp}</h3>
         <h3><b>Current Mode: </b> ${this.currentMode}</h3>
         <h3><b>Available Modes: </b>${this.modes.join(', ')}</h3>
-        ${this.modes.map(mode => html`<mwc-button>${mode}</mwc-button>`)}
+        ${this.modes.map(mode => html`<mwc-button class="light" raised label="${mode}"></mwc-button>`)}
       </ha-card>
     `;
   }

@@ -16,7 +16,7 @@ function t(t,e,n,s){var i,r=arguments.length,o=r<3?e:null===s?s=Object.getOwnPro
         <h3><b>Min Temp: </b> ${this.minTemp}</h3>
         <h3><b>Current Mode: </b> ${this.currentMode}</h3>
         <h3><b>Available Modes: </b>${this.modes.join(", ")}</h3>
-        ${this.modes.map(t=>O`<mwc-button>${t}</mwc-button>`)}
+        ${this.modes.map(t=>O`<mwc-button class="light" raised label="${t}"></mwc-button>`)}
       </ha-card>
     `:O``}_handleTap(){Et(this,this.hass,this.config,!1,!1)}_handleHold(){Et(this,this.hass,this.config,!0,!1)}static get styles(){return ct`
       .warning {
