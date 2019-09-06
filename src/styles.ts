@@ -18,7 +18,7 @@ const style = css`
     justify-content: space-evenly;
   }
   .current-mode {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .climate-mode {
     flex-basis: 33%;
