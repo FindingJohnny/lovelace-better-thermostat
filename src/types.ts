@@ -10,7 +10,3 @@ export interface BetterThermostatConfig {
   tap_aciton?: ActionConfig;
   hold_action?: ActionConfig;
 }
-
-export interface Climate {
-
-}

@@ -5,7 +5,6 @@ import {
   property,
   CSSResult,
   TemplateResult,
-  css,
   PropertyValues
 } from "lit-element";
 import {
@@ -16,6 +15,7 @@ import {
 } from "custom-card-helpers";
 
 import { Button } from "@material/mwc-button";
+import styles from "./styles";
 
 import { BetterThermostatConfig } from "./types";
 
@@ -38,7 +38,6 @@ class BetterThermostat extends LitElement {
   @property() private minTemp?: string;
 
   @property() private friendlyName?: string;
-
 
   public setConfig(config: BetterThermostatConfig): void {
     // TODO Check for required fields and that they are of the proper format
@@ -76,7 +75,6 @@ class BetterThermostat extends LitElement {
     return hasConfigOrEntityChanged(this, changedProps, false);
   }
 
-
   protected render(): TemplateResult | void {
     if (!this.config || !this.hass || !this.modes) {
       return html``;
@@ -98,40 +96,40 @@ class BetterThermostat extends LitElement {
         @ha-hold="${this._handleHold}"
         .longpress="${longPress()}"
       >
-        <div padding=2>
-          <h1>Current ${this.friendlyName} Climate</h1>
-          <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
-          <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-          <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
-          <h3><b>Min Temp: </b> ${this.minTemp}</h3>
-          <h3><b>Current Mode: </b> ${this.currentMode}</h3>
-          <h3><b>Available Modes: </b>${this.modes.join(', ')}</h3>
-          ${this.modes.map(mode => html`<mwc-button class="light" raised label="${mode}"></mwc-button>`)}
-        </div>
+        <h1>Current ${this.friendlyName} Climate</h1>
+        <h2><b>Current Temp: </b> ${this.currentTemp}</h2>
+        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+        <h3><b>Max Temp: </b> ${this.maxTemp}</h3>
+        <h3><b>Min Temp: </b> ${this.minTemp}</h3>
+        <h3><b>Current Mode: </b> ${this.currentMode}</h3>
+        <h3><b>Available Modes: </b>${this.modes.join(", ")}</h3>
+        ${this.modes.map(
+          mode =>
+            html`
+              <mwc-button class="light" raised label="${mode}"></mwc-button>
+            `
+        )}
       </ha-card>
     `;
   }
 
   private _handleTap(): void {
-    handleClick(this, this.hass!, this.config!, false, false);
+    if (this.hass && this.config) {
+      handleClick(this, this.hass, this.config, false, false);
+    }
   }
 
   private _handleHold(): void {
-    handleClick(this, this.hass!, this.config!, true, false);
+    if (this.hass && this.config) {
+      handleClick(this, this.hass, this.config, true, false);
+    }
   }
 
-  static get styles(): CSSResult {
-    return css`
-      .warning {
-        display: block;
-        color: black;
-        background-color: #fce588;
-        padding: 8px;
-      }
-    `;
+  public static get styles(): CSSResult {
+    return styles;
   }
 
-  logger(message) {
+  private logger(message) {
     // if (!("debug" in (this as any).args(script))) return;
 
     let message2 = message;
