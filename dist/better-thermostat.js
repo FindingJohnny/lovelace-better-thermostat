@@ -141,10 +141,8 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
         </div>
         <div class="container space-evenly center-self">
           ${this.modes.map(t=>O`
-                <mwc-button
-                  class="light climate-mode"
-                  raised
-                  label="${t}"
+                <mwc-button class="light climate-mode" raised label="${t}"
+                  ><mwc-ripple primary></mwc-ripple
                 ></mwc-button>
               `)}
         </div>
