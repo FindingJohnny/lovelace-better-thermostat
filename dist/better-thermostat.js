@@ -35,12 +35,14 @@ function t(t,e,n,i){var s,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
     align-items: center;
     justify-content: center;
     font-size: 12rem;
+    text-align: center;
   }
   .other-temp {
     width: 25%;
     align-items: center;
     justify-content: center;
     font-size: 6rem;
+    text-align: center;
   }
   .loader {
     width: 100%;

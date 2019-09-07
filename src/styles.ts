@@ -37,12 +37,14 @@ const style = css`
     align-items: center;
     justify-content: center;
     font-size: 12rem;
+    text-align: center;
   }
   .other-temp {
     width: 25%;
     align-items: center;
     justify-content: center;
     font-size: 6rem;
+    text-align: center;
   }
   .loader {
     width: 100%;
