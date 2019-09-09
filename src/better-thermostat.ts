@@ -14,7 +14,7 @@ import {
   hasConfigOrEntityChanged
 } from "custom-card-helpers";
 
-import "@polymer/paper-button";
+// import "@polymer/paper-button";
 import styles from "./styles";
 
 import { BetterThermostatConfig } from "./types";
@@ -107,14 +107,14 @@ class BetterThermostat extends LitElement {
         <div class="container center-items center-self">
           <div class="current-mode">${this.currentMode}</div>
         </div>
-        <div class="container space-evenly center-self">
+        <!-- <div class="container space-evenly center-self">
           ${this.modes.map(
-            mode =>
-              html`
-                <paper-button class="climate-mode" raised>${mode}</paper-button>
-              `
-          )}
-        </div>
+          mode =>
+            html`
+              <paper-button class="climate-mode" raised>${mode}</paper-button>
+            `
+        )}
+        </div> -->
       </ha-card>
     `;
   }
