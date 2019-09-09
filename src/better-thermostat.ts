@@ -14,8 +14,7 @@ import {
   hasConfigOrEntityChanged
 } from "custom-card-helpers";
 
-import { Button } from "@material/mwc-button";
-import { Ripple } from "@material/mwc-ripple";
+import "@polymer/paper-button";
 import styles from "./styles";
 
 import { BetterThermostatConfig } from "./types";
@@ -112,9 +111,7 @@ class BetterThermostat extends LitElement {
           ${this.modes.map(
             mode =>
               html`
-                <mwc-button class="light climate-mode" raised label="${mode}"
-                  ><mwc-ripple primary></mwc-ripple
-                ></mwc-button>
+                <paper-button class="climate-mode" raised>${mode}</paper-button>
               `
           )}
         </div>
