@@ -14,7 +14,6 @@ import {
   hasConfigOrEntityChanged
 } from "custom-card-helpers";
 
-// import "@polymer/paper-button";
 import styles from "./styles";
 
 import { BetterThermostatConfig } from "./types";
@@ -91,12 +90,6 @@ class BetterThermostat extends LitElement {
 
     return html`
       <ha-card
-        .header=${this.config.name
-          ? this.config.name
-          : "Current ${this.friendlyName} Climate"}
-        @ha-click="${this._handleTap}"
-        @ha-hold="${this._handleHold}"
-        .longpress="${longPress()}"
         class="thermostat-card"
       >
         <div class="container center-items">
@@ -107,21 +100,27 @@ class BetterThermostat extends LitElement {
         <div class="container center-items center-self">
           <div class="current-mode">${this.currentMode}</div>
         </div>
-        <!-- <div class="container space-evenly center-self">
+        <div class="container space-evenly center-self">
           ${this.modes.map(
           mode =>
             html`
-              <paper-button class="climate-mode" raised>${mode}</paper-button>
+              <mwc-button raised class="climate-mode" @click="${() => this._handleClimateModeTapped(mode)}">${mode}</mwc-button>
             `
         )}
-        </div> -->
+        </div>
       </ha-card>
     `;
   }
 
-  private _handleTap(): void {
+  private _handleClimateModeTapped(modeTapped: string): void {
     if (this.hass && this.config) {
-      handleClick(this, this.hass, this.config, false, false);
+      // handleClick(this, this.hass, this.config, false, false);
+      var serviceData = {
+        entity_id: this.config.entity,
+        preset_mode: modeTapped
+      }
+      console.log(serviceData);
+      this.hass.callService('climate', 'set_preset_mode', serviceData);
     }
   }
 
