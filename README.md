@@ -36,3 +36,8 @@ resources:
 ## Special Thanks
 
 Templated from [boilerplate-card](https://github.com/custom-cards/boilerplate-card)
+
+## Notice
+
+- Still in development. May occasionally have debug statements in the console. 
+- This is software I write in my freetime to make Home Assistant's UI better for my own personal use! I'm happy to share it! But please know you are using it at your own risk! :)
