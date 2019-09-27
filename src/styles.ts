@@ -1,10 +1,22 @@
 import { css } from "lit-element";
 
 const style = css`
+  .hvac-heat-mode {
+    --round-slider-bar-color: DarkOrange;
+    --round-slider-handle-color: DarkOrange;
+  }
+  .hvac-cool-mode {
+    --round-slider-bar-color: DeepSkyBlue;
+    --round-slider-handle-color: DeepSkyBlue;
+  }
+  .hvac-auto-mode {
+    --round-slider-bar-color: DarkGreen;
+    --round-slider-handle-color: DarkGreen;
+  }
   .thermostat-card {
-    display: flex;
     padding: 15px;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
   }
   .container {
     display: flex;
@@ -21,13 +33,14 @@ const style = css`
     justify-content: space-evenly;
   }
   .current-mode {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 2em;
+    padding: 1em;
     justify-content: center;
   }
   .climate-mode {
     flex-basis: 33%;
-    padding: 0.25rem;
+    padding: 0.25em;
+    width: 1em;
   }
   .item25 {
     flex-basis: 25%;
@@ -36,90 +49,111 @@ const style = css`
     width: 50%;
     align-items: center;
     justify-content: center;
-    font-size: 12rem;
+    font-size: 2.5em;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: flex;
+    margin-left: 0.1em;
+  }
+  .thermostat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .thermostat-current-temp {
+    /* position: absolute; */
+    font-size: 2.5em;
+    margin-left: 0.25em;
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+  }
+  .thermostat-other-states {
+    /* position: absolute; */
+    /* left: 50%;
+    top: 85%; */
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+  }
+  .thermostat-modes {
+    color: blue;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 33%;
+  }
+  .thermostat-mode-icon {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--disabled-text-color);
+  }
+  .icon-label {
+    font-size: 0.75em;
+  }
+  .icon-selected {
+    color: var(--dark-primary-color);
+  }
+  .thermostat-item {
+    position: relative;
+    flex-basis: 33%;
+  }
+  .inline {
+    display: inline;
+  }
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .clearfixold {
+    overflow: auto;
+  }
+  .state-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    margin-bottom: 2em;
+  }
+  .state-item {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    font-size: 2.5em;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: flex;
+    margin-left: 0.1em;
   }
   .other-temp {
     width: 25%;
     align-items: center;
     justify-content: center;
-    font-size: 6rem;
+    font-size: 2em;
     text-align: center;
   }
-  .loader {
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .header {
-    font-family: var(--paper-font-headline_-_font-family);
-    -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
-    font-size: var(--paper-font-headline_-_font-size);
-    font-weight: var(--paper-font-headline_-_font-weight);
-    letter-spacing: var(--paper-font-headline_-_letter-spacing);
-    line-height: var(--paper-font-headline_-_line-height);
-    text-rendering: var(--paper-font-common-expensive-kerning_-_text-rendering);
-    opacity: var(--dark-primary-opacity);
-    padding: 24px 0px 0px;
-  }
-  table {
-    border-spacing: 0;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  .day-wrapper td {
-    padding-top: 10px;
-    cursor: pointer;
-  }
-  .day-wrapper.day-wrapper-last > td {
-    padding-bottom: 10px;
-    border-bottom: 1px solid;
-  }
-  .day-wrapper.day-wrapper-last:last-child > td {
-    border-bottom: 0 !important;
-  }
-  .day-wrapper .overview {
-    padding-left: 10px;
-    cursor: pointer;
-  }
-  .day-wrapper .overview .time,
-  .day-wrapper .location ha-icon {
-    color: var(--secondary-text-color);
-  }
-  .day-wrapper hr.progress-bar {
-    border-style: solid;
-    border-color: var(--accent-color);
-    border-width: 1px 0 0 0;
-    margin-top: -7px;
-    margin-left: 0px;
-    color: var(--primary-color);
-    width: 100%;
-  }
-  .day-wrapper ha-icon.progress-bar {
-    height: 9px;
-    width: 9px;
-    margin-top: 2px;
-    color: var(--accent-color);
-  }
-  .day-wrapper .location a {
-    text-decoration: none;
-    display: flex;
-    color: var(--accent-color);
-  }
-  .event-origin {
-    float: right;
-  }
-  .event-origin span {
-    color: var(--accent-color);
-    margin-right: -4px;
-  }
-  .event-origin ha-icon {
-    height: 13px;
-    margin-top: -3px;
-    color: var(--accent-color);
+  .temp-unit {
+    font-size: 0.4em;
+    align-self: start;
+    margin-top: 0.25em;
+    display: inline;
+    margin-left: -0.75em;
+    vertical-align: text-top;
   }
 `;
 
