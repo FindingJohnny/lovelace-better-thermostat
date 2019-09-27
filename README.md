@@ -25,8 +25,6 @@ preset_climate_modes:
 type: 'custom:better-thermostat'
 ```
 
-Templated from [boilerplate-card](https://github.com/custom-cards/boilerplate-card)
-
 ## Raw Yaml Configuration for [HACS](https://hacs.netlify.com/)
 
 ```
@@ -34,3 +32,7 @@ resources:
   - url: /community_plugin/lovelace-better-thermostat/better-thermostat.js
     type: js
 ```
+
+## Special Thanks
+
+Templated from [boilerplate-card](https://github.com/custom-cards/boilerplate-card)
