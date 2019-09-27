@@ -1,5 +1,7 @@
 # Better Thermostat Card
 
+![Screenshot](/better-thermostat.png?raw=true "Screenshot")
+
 ## Release v0.5
 
 ## Example Card Config Yaml
