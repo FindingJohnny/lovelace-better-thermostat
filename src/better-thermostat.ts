@@ -169,8 +169,10 @@ class BetterThermostat extends LitElement {
 
   private getCorrectSlider(): TemplateResult {
     if (this.currentHvacMode) {
-      if (this.currentHvacMode.toLowerCase() === this.AUTO.toLowerCase() ||
-          this.currentHvacMode.toLowerCase() === this.HEAT_COOL.toLowerCase()) {
+      if (
+        this.currentHvacMode.toLowerCase() === this.AUTO.toLowerCase() ||
+        this.currentHvacMode.toLowerCase() === this.HEAT_COOL.toLowerCase()
+      ) {
         return html`
           <round-slider
             class="thermostat-item hvac-auto-mode"
