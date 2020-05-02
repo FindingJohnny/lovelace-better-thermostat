@@ -59,6 +59,7 @@ class BetterThermostat extends LitElement {
   @property() private temporaryStateOverride: boolean = false;
 
   private readonly AUTO: string = "Auto";
+  private readonly HEAT_COOL: string = "Heat_Cool";
   private readonly HEAT: string = "Heat";
   private readonly COOL: string = "Cool";
   private readonly POWER: string = "Power";
@@ -168,7 +169,8 @@ class BetterThermostat extends LitElement {
 
   private getCorrectSlider(): TemplateResult {
     if (this.currentHvacMode) {
-      if (this.currentHvacMode.toLowerCase() === this.AUTO.toLowerCase()) {
+      if (this.currentHvacMode.toLowerCase() === this.AUTO.toLowerCase() ||
+          this.currentHvacMode.toLowerCase() === this.HEAT_COOL.toLowerCase()) {
         return html`
           <round-slider
             class="thermostat-item hvac-auto-mode"
